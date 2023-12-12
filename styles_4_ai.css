@@ -56,6 +56,9 @@ nav ul li a:hover {
     color:#FFEB3B;
 }
 
+.picture_text_1 ul li {
+    margin: 10px 0px;
+}
 
 #highlight {
     margin-top: -10px;
@@ -117,7 +120,7 @@ img {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: left;
     width: 40%;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0px;
 }
 
@@ -155,14 +158,78 @@ img {
     max-width: 600px; /* Adjust the maximum width of the text as needed */
 }
 
-@media screen and (max-width: 700px) {
+#contact {
+    background-color: #cce7fe;
+    padding: 50px 10%;
+    text-align: center;
+    color: #333333;
+}
+
+.headline_3{
+    color: #333333;
+}
+
+.contact-container {
+    display: flex; /* Aligns items horizontally */
+    align-items: center; /* Centers items vertically */
+    gap: 100px; /* Adds space between image and text */
+    width: fit-content; /* Adjusts width to fit its contents */
+    margin: 0 auto; /* Centers the container horizontally */
+    justify-content: flex-start; /* Aligns items to the start of the container */
+}
+
+.contact-form {
+    width: 50%;
+    max-width: 500px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 375px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+
+}
+
+.contact-form button {
+    width: 400px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.contact-info {
+    width: 50%;
+    max-width: 500px;
+    text-align: left;
+    font-size: 1.2rem;
+    margin-top: -20px;
+}
+
+.headline_3{
+    font-size: 2rem;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+
+@media screen and (max-width: 800px) {
 
     .img_icon {
-        /* You can set a specific width and height for the icons */
-        width: 130px; /* Example size, adjust as needed */
-        height: 130px; /* Example size, adjust as needed */
-        margin-top: 30px;
-        }   
+    /* You can set a specific width and height for the icons */
+    width: 160px; /* Example size, adjust as needed */
+    height: 160px; /* Example size, adjust as needed */
+    margin-top: 0px;
+    }   
 
    
     .icon_div {
@@ -171,61 +238,75 @@ img {
     gap: 10px; /* Adjust the gap as needed */
 
     }
+
     #cleaning_lady {
     display: flex; /* Aligns items horizontally */
     align-items: center; /* Centers items vertically */
-    gap: 10px; /* Adds space between image and text */
+    gap: 15px; /* Adds space between image and text */
     margin: 0 auto; /* Centers the container horizontally */
+    overflow: auto;
     }
     
     #cleaning_lady_picture{
     height: auto; /* Maintains the aspect ratio */
-    width: 50%;
-    margin-left: -30px;
-    padding-top: 20px;
-    transform: scale(1.4);
-    
-
+    margin-left: 0px;
+    transform: scale(1.6);
+    margin-top: 0px;
+    flex-grow: 1;
     }
 
     #home{
-    margin-top: -20px;
-    height: 45vh;
+    display: flex;
+    margin-top: 0px;
     background-color: #FFFFFF;
     width: 100%;
     }
 
 
     #about{
-        background-color:  #007BFF ;
-        width: 100%;
-        height: 70%;
-        color: white;
-        padding: 5px 5px;
+    background-color:  #007BFF ;
+    width: 100%;
+    height: 70%;
+    color: white;
+    padding: 5px 5px;
 
     }
 
     .picture_text_2 h2 {
-    font-size: 0.8rem;
+    font-size: 1rem;
     width: 70%;
-    max-width: 500px;
     margin: 0px;
     }
 
    
     .picture_text_2 p {
-    font-size: 0.85rem;
-
-    max-width: 700px;
+    font-size: 0.65rem;
     }
 
-   .picture_text_1 h2 {
-        font-size: 1.2rem;
-        }
-    
-       
-    .picture_text_1 p {
+    .picture_text_1{
+        flex-grow: 2;
         font-size: 1rem;
-        }
+    }
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .contact-form, .contact-info {
+        width: 100%;
+
+    }
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align the items */
+        justify-content: center; /* Center along the main axis */
+        margin-top: -45px;
+    }
+
+    .contact-info p {
+        margin: 7px 0px;
+     }
 }
     

@@ -14,8 +14,8 @@
             <ul>   
                 <li><a href="#home">Domů</a></li>
                 <li><a href="#services">Služby</a></li>
-                <li><a href="#about">Naše hodnoty</a></li>
                 <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#about">Naše hodnoty</a></li>
             </ul>
         </nav>
     </header>
@@ -25,10 +25,40 @@
             <img id="cleaning_lady_picture" src="https://github.com/okut5/project_4_AI/blob/main/pictures/cleaning_lady_white_background.png?raw=true" alt="Picture of cleaning lady from Midjourney">
             <div class="picture_text_1">
                 <h2>Čistota ve znamení ekologie za férovou cenu.</h2>
-                <p>Naše heslo "Čistota ve znamení ekologie za férovou cenu" odráží náš závazek k poskytování kvalitních čistících služeb s důrazem na ekologii a spravedlivost. Férová cena pro nás znamená přístupné ceny, které jsou spravedlivé jak pro naše zákazníky, tak pro naše pracovníky, zatímco ekologie se odráží v používání šetrných prostředků a metod. Spojením těchto principů se snažíme o harmonii mezi výbornou službou a ochranou naší planety.</p>
+                <ul>
+                    <li>
+                        <strong>Kvalitní Úklidové Služby:</strong> Zajišťujeme vysokou kvalitu čištění s profesionálním přístupem.
+                    </li>
+                    <li>
+                        <strong>Důraz na Ekologii:</strong> Používáme ekologicky šetrné prostředky a metody pro menší dopad na životní prostředí.
+                    </li>
+                    <li>
+                        <strong>Férové Ceny:</strong> Nabízíme přístupné ceny, které jsou spravedlivé pro naše zákazníky i pracovníky.
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
+
+    <section id="contact">
+        <h2 class="headline_3">Kontaktujte nás</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Jméno" required>
+                <input type="email" placeholder="E-mail" required>
+                <textarea placeholder="Vaše zpráva"></textarea>
+                <button type="submit">Odeslat</button>
+            </form>
+            <div class="contact-info">
+                <h3>Kontaktní informace</h3>
+                <p><strong>Adresa:</strong> Vaše adresa 123, Město, PSČ</p>
+                <p><strong>Telefon:</strong> +420 123 456 789</p>
+                <p><strong>E-mail:</strong> info@vascisticiservis.cz</p>
+            </div>
+        </div>
+    </section>
+    
+
     <section id="about">
         <h2 class="headline_2">Naše hodnoty</h2>
         <div class="icon_div">
@@ -79,7 +109,29 @@
     <footer>
         <p>© 2023 Váš Čistící Servis</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            fetch('sendEmail.php', {
+            method: 'POST',
+            body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+            alert('Email sent successfully');
+            console.log(data);
+            })
+            .catch(error => {
+            alert('Error sending email');
+            console.error(error);
+            });
+         });
+        });
+
+    </script>
 </body>
 </html>
 </body>
